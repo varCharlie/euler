@@ -6,7 +6,7 @@ purpose: Implement mathematical functions related to Euler
 =end
 
 module Math
-  extend Math
+  extend self
 
   def factorial(n)
     n.downto(1).to_a.reduce(:*)
@@ -21,18 +21,20 @@ module Math
   end
 
   module Euler
-    extend Euler
+    extend self
+
     def e(n)
       (1..(n)).reduce do |reduction, x|
         reduction += (1.0 / Math::factorial(x))
       end + 1
     end
 
-    def eulers(n)
+    def euler(n)
       (1..(n)).reduce do |reduction, x|
         reduction += (1.0 / x**2)
       end
     end
+
   end
 end
 
