@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-    Calculator Eulers Number: Python Implementation
-    Charles Pantoga
+Gmail: Suspects
+Author: Charles Pantoga
+Purpose: Implement mathematical formulas related to Euler
 """
-from math import pi
 
 def fact(n):
     """Basic computer science example for recursive function"""
@@ -20,21 +20,13 @@ def iter_fact(n):
         i += 1
     return ret
 
-def eulers(n):
+def e(n):
     """If using Python3, xrange is now range"""
     return sum([(1.0 / fact(i)) for i in xrange(1, n+1)]) + 1
 
-def eulers_iter(n):
+def e2(n):
     """If using Python3, xrange is now range"""
     return sum([(1.0 / iter_fact(i)) for i in xrange(1, n+1)]) + 1
 
 def euler(n):
     return sum([(1.0 / i**2) for i in xrange(1, n+1)])
-
-n = 170
-print "eulers_iter(n) =  {} when n is {}.\n".format(eulers_iter(n), n)
-print "eulers(n) = {} when n is {}.\n".format(eulers(n), n)
-
-n = 25000000
-print "euler(n) is {} when n is {}.\n".format(euler(n), n)
-print "(pi ^ 2) / 6 is {}".format((pi**2) / 6)
