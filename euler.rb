@@ -13,28 +13,15 @@ module Math
   end
 
   def fact_r(n)
-    if n == 0
-      1
-    else
-      n * fact_r(n-1)
-    end
+    n == 0 ? 1 : n*fact_r(n-1)
   end
 
-  module Euler
-    extend self
+  def e(n)
+    1.upto(n).reduce { |r,x| r += (1.0/Math.factorial(x)) }
+  end
 
-    def e(n)
-      (1..(n)).reduce do |reduction, x|
-        reduction += (1.0 / Math::factorial(x))
-      end + 1
-    end
-
-    def euler(n)
-      (1..(n)).reduce do |reduction, x|
-        reduction += (1.0 / x**2)
-      end
-    end
-
+  def euler(n)
+    1.upto(n).reduce { |r,x| r += (1.0/(x**2)) }
   end
 end
 
