@@ -31,7 +31,7 @@ double euler(int n)
 {
     double result = 0.0;
     for (int i = 1; i <= n; i++) {
-        result += (1.0 / ((double)(pow(i,2))));
+        result += (1.0 / (double)pow(i,2));
     }
     return result;
 }
